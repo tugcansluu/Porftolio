@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleTheme()">Gece/Gündüz</button>
+
+    <div class="container">
+        <img src="profile2.png" alt="Profile Picture" class="profile-img">
+        <h1>Merhaba, Ben Tuğcan Uslu</h1>
+        <p>Kahve Dünyası Firmasında ERP Uzman Yrd. Olarak Çalışıyorum.</p>
+
+        <div id="about" class="about">
+            <h2>Hakkımda</h2>
+            <p>Ben Bilgisayar Prog. Önlisans programından mezunum. Şu anda Kahve Dünyası firmasında ERP Uzman Yrd. olarak çalışıyorum. ERP alanında iş hayatında kendimi geliştirirken aynı zamanda farklı programlama dillerini öğrenerek kendimi geliştirmeye devam ediyorum.</p>
+        </div>
+
+        <div id="projects" class="projects">
+            <h2>Projelerim</h2>
+            <p><a href="https://github.com/tugcansluu/Trion-Launcher" target="_blank">Trion Minecraft Launcher</a></p>
+            <p><a href="https://github.com/Mnakis/marketplus" target="_blank">MarketPlus Market Otomasyonu</a></p>
+            <p><a href="https://github.com/tugcansluu/2DTRION" target="_blank">2DTRION Unity Oyun Proje</a></p>
+        </div>
+        
+        <div id="contact" class="contact">
+            <h2>İletişim</h2>
+            <p>Email: tugcanslu@gmail.com </p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/tugcanslu/" target="_blank">LinkedIn Profilim</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            console.log("Dark mode toggled. Current state:", document.body.classList.contains("dark-mode"));
+        }
+
+        function revealOnScroll() {
+            const sections = document.querySelectorAll(".about, .projects, .contact");
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 50) {
+                    section.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+function toggleTheme() {
+    document.body.classList.toggle("dark-mode");
+}
+
+
+function revealOnScroll() {
+    const sections = document.querySelectorAll(".about, .projects, .contact");
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 50) {
+            section.classList.add("visible");
+        }
+    });
+}
+
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
